@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:hive_flutter/adapters.dart';
 import '../Pages/home_page.dart';
 
 void main() async{
   await Hive.initFlutter(); //? Initialize the Hive
-  var box = await Hive.openBox('myBox'); //? Open a Box
+  await Hive.openBox("mybox"); //? Open a Box
   runApp(const MyApp());
 }
 
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(statusBarColor: Colors.transparent));
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'To Do',

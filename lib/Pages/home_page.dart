@@ -14,7 +14,7 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
 
   //! Reference the Hive
-  final _myBox = Hive.box('my_Box');
+  final _myBox = Hive.box("mybox");
 
   //! Text Controller
   final _controller = TextEditingController();
@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.yellow[200],
+        backgroundColor: Colors.white,
         appBar: AppBar(
           title: const Text('T O D O'),
           centerTitle: true,
